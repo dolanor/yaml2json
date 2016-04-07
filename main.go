@@ -33,7 +33,8 @@ func _main() error {
 		return err
 	}
 
-	output, err := json.Marshal(data)
+	// Indent 12 spaces for apiary API blueprint json format
+	output, err := json.MarshalIndent(data, "            ", "    ")
 	if err != nil {
 		return err
 	}
